@@ -1,0 +1,46 @@
+# === Python cache files ===
+__pycache__/
+*.py[cod]
+*.so
+
+# === Jupyter notebook checkpoints ===
+.ipynb_checkpoints/
+
+# === Environment and OS files ===
+.env
+.DS_Store
+Thumbs.db
+
+# === Colab / temp / backup files ===
+*.swp
+*.bak
+*.tmp
+
+# === Data and training artifacts ===
+data/
+*.csv
+*.tsv
+*.json
+*.h5
+*.npz
+*.pkl
+*.log
+*.out
+
+# === Model weights (general) ===
+# *.pt
+#*.pth
+# *.ckpt
+
+# === But keep final models in results/ ===
+!results/
+!results/*.pt
+!results/*.pth
+
+# === Ignore nested git repositories or submodules ===
+warp-ctc/
+
+# === Misc ===
+checkpoints/
+models/
+logs/
