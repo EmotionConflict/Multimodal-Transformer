@@ -13,10 +13,15 @@ def get_data(args, dataset, split='train'):
         data = Multimodal_Datasets(args.data_path, dataset, split, args.aligned)
         torch.save(data, data_path)
     else:
-        print(f"  - Found cached {split} data")
-        # edit
-        torch.serialization.add_safe_globals({'Multimodal_Datasets': Multimodal_Datasets})
-        data = torch.load(data_path, weights_only=False)
+      print(f"  - Found cached {split} data")
+      try:
+          import torch.serialization
+          from src.dataset import Multimodal_Datasets
+          torch.serialization.add_safe_globals({'Multimodal_Datasets': Multimodal_Datasets})
+          data = torch.load(data_path, weights_only=False)
+      except Exception as e:
+          print(f"Failed to load data: {e}")
+          raise e
     return data
 
 

@@ -15,6 +15,7 @@ Thumbs.db
 *.swp
 *.bak
 *.tmp
+Archive.zip
 
 # === Data and training artifacts ===
 data/
@@ -39,14 +40,3 @@ data/
 
 # === Ignore nested git repositories or submodules ===
 warp-ctc/
-
-# === Misc ===
-checkpoints/
-models/
-logs/
-<<<<<<< HEAD
-=======
->>>>>>> cada5db (Update from Colab)
-Archive.zip
->>>>>>> 8d60647 (Ignore Archive.zip)
-Archive.zip
