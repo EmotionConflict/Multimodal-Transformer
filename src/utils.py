@@ -1,6 +1,8 @@
 import torch
 import os
 from src.dataset import Multimodal_Datasets
+import torch.serialization
+from src.dataset import Multimodal_Datasets
 
 
 def get_data(args, dataset, split='train'):
@@ -12,7 +14,9 @@ def get_data(args, dataset, split='train'):
         torch.save(data, data_path)
     else:
         print(f"  - Found cached {split} data")
-        data = torch.load(data_path)
+        # edit
+        torch.serialization.add_safe_globals({'Multimodal_Datasets': Multimodal_Datasets})
+        data = torch.load(data_path, weights_only=False)
     return data
 
 
