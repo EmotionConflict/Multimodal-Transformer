@@ -1,0 +1,10 @@
+# Ignore dataset files and folders
+data/
+*.csv
+*.tsv
+*.zip
+
+# Optional: Ignore common temp files
+__pycache__/
+*.pyc
+*.ipynb_checkpoints
