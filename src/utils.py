@@ -2,7 +2,7 @@ import torch
 import os
 from src.dataset import Multimodal_Datasets
 import torch.serialization
-from src.dataset import Multimodal_Datasets
+from src import models 
 
 
 def get_data(args, dataset, split='train'):
@@ -39,7 +39,14 @@ def save_model(args, model, name=''):
     torch.save(model, f'pre_trained_models/{name}.pt')
 
 
+# def load_model(args, name=''):
+#     name = save_load_name(args, name)
+#     model = torch.load(f'pre_trained_models/{name}.pt')
+#     return model
+
 def load_model(args, name=''):
     name = save_load_name(args, name)
-    model = torch.load(f'pre_trained_models/{name}.pt')
+    torch.serialization.add_safe_globals(vars(models))
+
+    model = torch.load(f'pre_trained_models/{name}.pt', weights_only=False)
     return model
