@@ -13,8 +13,7 @@ from torch.utils.data import DataLoader
 from tree_of_thought.tot_utils import build_tot_prompt
 
 # Set your OpenAI API key explicitly here:
-openai.api_key = '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'  # <-- Replace explicitly with your actual API key
-
+openai.api_key = 'KEY'
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Load your model explicitly (unchanged):

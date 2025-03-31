@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime
 
-OPENAI_API_KEY='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'
+OPENAI_API_KEY='KEY'
 openai.api_key = os.getenv(OPENAI_API_KEY)
 
 def build_tot_prompt(frame, history):
